@@ -23,15 +23,32 @@ namespace Screeps3D.RoomObjects
         Decay	5,000 ticks
     */
 
-    public class PowerBank : Structure
+    public class PowerBank : Structure, IDecay
     {
+        public float NextDecayTime { get; set; }
+
+        public float Power { get; set; }
+
+        /// <summary>
+        /// The maximum power a bank can spawn with
+        /// </summary>
+        public float PowerCapacity { get; set; }
 
         internal PowerBank()
         {
+            PowerCapacity = 10000; // Q: move to constants?
         }
 
         internal override void Unpack(JSONObject data, bool initial)
         {
+            var powerData = data["power"];
+            if (powerData != null)
+            {
+                this.Power = powerData.n;
+            }
+
+            UnpackUtility.Decay(this, data);
+
             base.Unpack(data, initial);
         }
     }
