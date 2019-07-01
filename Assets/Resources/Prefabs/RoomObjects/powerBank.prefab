@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4995901363948896227}
   - component: {fileID: 1092113716102967340}
   - component: {fileID: 3003608407090080956}
+  - component: {fileID: 6495379366328342017}
   m_Layer: 0
   m_Name: powerBank
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c143c9faac4c8193ea547a8365995a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6495379366328342017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126925853384401034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e4df00248aa6544ba0116c682d5ec7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _powerScaleVisibility: {fileID: 3510289316301859309}
+  _Power: 0
 --- !u!1 &2193485393721761997
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +215,7 @@ GameObject:
   - component: {fileID: 4696460372196101494}
   - component: {fileID: 8311824460220472317}
   - component: {fileID: 1522280115955626251}
+  - component: {fileID: 3510289316301859309}
   m_Layer: 0
   m_Name: powerSphere
   m_TagString: Untagged
@@ -266,3 +282,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3510289316301859309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7725366203275152217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0dbd230caa4450b371bfe864d7906a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animateOnStart: 1
+  _visibleOnStart: 1
+  _speed: 0.2
