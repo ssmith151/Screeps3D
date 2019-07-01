@@ -24,9 +24,6 @@ namespace Assets.Scripts.Screeps3D.RoomObjects.Views
         {
             var power = _Power > 0 ? _Power : _powerBank.Power;
             var percentage = power / _powerBank.PowerCapacity;
-            Debug.Log("original power " + power);
-            Debug.Log("power " + power);
-            Debug.Log("percentage " + percentage);
 
             var minVisibility = 0.001f; /*to keep it visible and selectable, also allows the resource to render again when regen hits*/
             var maxVisibility = 1f;

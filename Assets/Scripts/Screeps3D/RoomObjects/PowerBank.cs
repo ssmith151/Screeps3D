@@ -23,7 +23,7 @@ namespace Screeps3D.RoomObjects
         Decay	5,000 ticks
     */
 
-    public class PowerBank : Structure, IDecay
+    public class PowerBank : Structure, IDecay, IPowerObject
     {
         public float NextDecayTime { get; set; }
 
