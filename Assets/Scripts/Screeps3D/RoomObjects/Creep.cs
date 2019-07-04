@@ -163,14 +163,10 @@ namespace Screeps3D.RoomObjects
 
         private void AssignRotation()
         {
-            Vector3 newForward = Vector3.zero;
             if (BumpPosition != default(Vector3))
-                newForward = Position - BumpPosition;
+                Rotation = Quaternion.LookRotation(Position - BumpPosition);
             if (PrevPosition != Position)
-                newForward = PrevPosition - Position;
-
-            if (newForward != Vector3.zero)
-                Rotation = Quaternion.LookRotation(newForward);
+                Rotation = Quaternion.LookRotation(PrevPosition - Position);
         }
     }
 }

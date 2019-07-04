@@ -1,22 +1,13 @@
 ﻿using System.Collections.Generic;
 using Common;
-using System.Linq;
 
 namespace Screeps3D.Rooms
 {
     public class RoomManager : BaseSingleton<RoomManager>
     {
-
+        
         private RoomFactory _factory = new RoomFactory();
-        private Dictionary<string, Room> _rooms = new Dictionary<string, Room>();
-
-        public IEnumerable<Room> Rooms
-        {
-            get
-            {
-                return _rooms.Select(r => r.Value);
-            }
-        }
+        private Dictionary<string, Room> _rooms = new Dictionary<string,Room>();
 
         public Room Get(string roomName, string shardName)
         {
@@ -44,8 +35,7 @@ namespace Screeps3D.Rooms
             if (origin.XDir == "E")
             {
                 xCoord += xDelta;
-            }
-            else
+            } else
             {
                 xCoord -= xDelta;
             }
@@ -58,8 +48,7 @@ namespace Screeps3D.Rooms
             if (origin.YDir == "N")
             {
                 yCoord += yDelta;
-            }
-            else
+            } else
             {
                 yCoord -= yDelta;
             }
@@ -71,7 +60,7 @@ namespace Screeps3D.Rooms
 
             var roomName = string.Format("{0}{1}{2}{3}", xDir, xCoord, yDir, yCoord);
             var shardName = string.Format("shard{0}", origin.ShardNumber);
-
+            
             return Get(roomName, shardName);
         }
     }

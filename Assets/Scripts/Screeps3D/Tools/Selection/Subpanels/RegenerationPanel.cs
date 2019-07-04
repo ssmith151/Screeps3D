@@ -30,10 +30,7 @@ namespace Screeps3D.Tools.Selection.Subpanels
 
         private void UpdateLabel()
         {
-            if (_regenObject.NextRegenerationTime == 0)
-                _label.text = string.Format("{0:n0}", 0);
-            else
-                _label.text = string.Format("{0:n0}", _regenObject.NextRegenerationTime - _regenObject.Room.GameTime);
+            _label.text = string.Format("{0:n0}", _regenObject.NextRegenerationTime - _regenObject.Room.GameTime);
         }
 
         private void OnDelta(JSONObject obj)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Resources;
 using System.Text;
@@ -12,7 +13,6 @@ namespace Screeps_API
     public class BadgeManager : MonoBehaviour
     {
         public const int BADGE_SIZE = 250;
-        
         public Texture2D Invader { get; private set; }
         
         private BadgePathGenerator _badgePaths = new BadgePathGenerator();
@@ -71,6 +71,7 @@ namespace Screeps_API
             var byteArray = Encoding.ASCII.GetBytes(xml);
             using (var stream = new MemoryStream(byteArray))
             {
+
                 var svgDocument = SvgDocument.Open(stream);
                 var bitmap = svgDocument.Draw();
                 var texture = new Texture2D(bitmap.Width, bitmap.Height);

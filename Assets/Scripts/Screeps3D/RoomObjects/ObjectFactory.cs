@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Screeps3D.RoomObjects
+﻿namespace Screeps3D.RoomObjects
 {
     public class ObjectFactory
     {
@@ -42,12 +40,6 @@ namespace Screeps3D.RoomObjects
                     return new PowerSpawn();
                 case Constants.TypeSource:
                     return new Source();
-                case Constants.TypeTombstone:
-                    return new Tombstone();
-                case Constants.TypeResource:
-                    return new Resource();
-                case Constants.TypeSourceKeeperLair:
-                    return new SourceKeeperLair();
                 default:
                     return new RoomObject();
             }

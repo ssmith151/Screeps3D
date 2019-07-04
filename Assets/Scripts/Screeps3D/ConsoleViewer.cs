@@ -4,8 +4,6 @@ using UnityEngine;
 using Screeps3D;
 using Screeps_API;
 using Unity_Console;
-using System.Text.RegularExpressions;
-using Assets.Scripts.Screeps3D;
 
 namespace Screeps3D
 {
@@ -33,9 +31,9 @@ namespace Screeps3D
             ScreepsAPI.Console.Input(obj);
         }
 
-        private void OnMessage(ScreepsConsole.ConsoleMessage message)
+        private void OnMessage(string obj)
         {
-            PrintMessage(message, Color.white);
+            PrintMessage(obj, Color.white);
         }
 
         private void OnError(string obj)

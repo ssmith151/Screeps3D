@@ -113,7 +113,6 @@ namespace Screeps3D.Rooms
                     var roomObject = kvp.Value;
                     roomObject.HideObject(_room);
                 }
-                _room.Objects.Clear();
             }
         }
 

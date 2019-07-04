@@ -22,10 +22,6 @@ namespace Screeps3D
         public const string TypeMineral = "mineral";
         public const string TypePowerSpawn = "powerSpawn";
         public const string TypeSource = "source";
-        public const string TypeTombstone = "tombstone";
-        public const string TypeResource = "energy";
-        public const string TypeSourceKeeperLair = "keeperLair";
-        
 
         public const float ShardHeight = 100;
 
@@ -93,23 +89,11 @@ namespace Screeps3D
             {3, 70000},
             {4, 100000}
         };
-
-        public static class BaseMineral
-        {
-            public const string Hydrogen = "H";
-            public const string Oxygen = "O";
-            public const string Utrium = "U";
-            public const string Keanium = "K";
-            public const string Lemergium = "L";
-            public const string Zynthium = "Z";
-            public const string Catalyst = "X";
-        }
-
+        
         public static readonly HashSet<string> ResourcesAll = new HashSet<string>()
         {
             "energy", 
             "power", 
-            "ops",
             "H",
             "O",
             "U",

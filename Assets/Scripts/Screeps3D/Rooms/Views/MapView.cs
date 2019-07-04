@@ -26,7 +26,7 @@ namespace Screeps3D.Rooms.Views
 
         private MapDotView[,] _dots = new MapDotView[50, 50];
         private List<MapDotView> _dotList = new List<MapDotView>();
-
+        
         public void Init(Room room)
         {
             Room = room;
@@ -57,16 +57,8 @@ namespace Screeps3D.Rooms.Views
             {
                 if (key.Length <= 2)
                     continue;
-
-                Color randomEnemyColor;
-                if (!GameManager.Instance.PlayerColors.TryGetValue(key, out randomEnemyColor))
-                {
-                    randomEnemyColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-                    GameManager.Instance.PlayerColors.Add(key, randomEnemyColor);
-                }
-
-
-                var color = key == ScreepsAPI.Me.UserId ? Color.green : randomEnemyColor;
+                
+                var color = key == ScreepsAPI.Me.UserId ? Color.green : Color.red;
                 foreach (var numArray in data[key].list)
                 {
                     var x = (int) numArray.list[0].n;
@@ -100,7 +92,5 @@ namespace Screeps3D.Rooms.Views
         {
             _dots[x, y] = null;
         }
-
-        
     }
 }

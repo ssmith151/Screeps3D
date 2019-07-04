@@ -10,8 +10,6 @@ namespace Screeps3D.Player
 {
     public class PlayerGaze : MonoBehaviour
     {
-        public bool allowFocus;
-
         public const int ViewDistance = 2;
         public const int SubscribeLimit = 2;
         public const float MapDistance = 200;
@@ -20,11 +18,6 @@ namespace Screeps3D.Player
         private Queue<Room> queue = new Queue<Room>();
         private List<Room> _mapRooms = new List<Room>();
         private double _nextMap;
-
-        PlayerGaze()
-        {
-            allowFocus = true;
-        }
 
         private void Update()
         {
@@ -88,24 +81,10 @@ namespace Screeps3D.Player
             if (Physics.Raycast(ray, out hit, 200, 1 << 10))
             {
                 var roomView = hit.collider.GetComponent<RoomView>();
-                if (roomView == null)
+                if (roomView == null || roomView.Room.ShowingObjects)
                 {
                     return;
                 }
-
-                if (roomView.Room.ShowingObjects)
-                {
-                    // make sure the room we are viewing is last in the queue
-                    var nextRoom = queue.Peek();
-                    if (nextRoom == roomView.Room)
-                    {
-                        var room = queue.Dequeue();
-                        queue.Enqueue(room);
-                    }
-                    
-                    return;
-                }
-
 
                 ShowObjects(roomView.Room);
             }
@@ -133,8 +112,7 @@ namespace Screeps3D.Player
             }
             queue.Enqueue(room);
 
-            if (allowFocus)
-                room.ShowObjects(true);
+            room.ShowObjects(true);
             LoadNeighbors(room);
         }
         

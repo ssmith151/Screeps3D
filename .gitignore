@@ -29,7 +29,6 @@ sysinfo.txt
 *.pidb
 .DS_Store
 .idea
-.vs
 
 ###
 # OS generated
@@ -42,6 +41,3 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
-dist/*
-*.blend1
-*.blend1.meta
